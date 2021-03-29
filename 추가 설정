@@ -1,0 +1,15 @@
+## 부팅시 터미널이 열리고 파이썬을 자동 실행하는 방법이다.
+
+아래 파일에 
+/etc/xdg/lxsession/LXDE-pi/autostart
+
+screensaver의 바로 윗줄에다가 아래 명령어를 입력해주면된다.
+@lxterminal --command /home/pi/Desktop/auto_mp3/main.py
+
+
+
+## 전원 버튼 만들기
+https://ddangeun.tistory.com/120
+
+sudo nano /boot/config.txt 에 아래 코드를 추가한다.
+dtoverlay=gpio-shutdown,gpio_pin=24,active_low=1,gpio_pull=up
